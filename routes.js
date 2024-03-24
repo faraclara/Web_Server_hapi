@@ -56,8 +56,10 @@ const routes = [
         path: '/login',
         handler: (request, h) => {
             const { username, password } = request.payload;
-            return `Welcome ${username}!`;
+            return `Welcome ${username}!`; // Respond Welcome HarryPotter!
+            return h.response('created').code(201); // Respond Created
         }
+        //RESPOND HANYA BISA 1 DAHULU ANTARA CODE 201 ATAU WELCOME
         // untuk test nya silahkan buka postman urlnya = menggunakan method POST pilih body->raw->JSON
         //masukan { "username": "harrypotter", "password": "encryptedpassword" }
         //output Welcome harrypotter!
