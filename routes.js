@@ -50,6 +50,18 @@ const routes = [
             return 'Halaman tidak ditemukan';
         },
     },
+
+    {
+        method: 'POST',
+        path: '/login',
+        handler: (request, h) => {
+            const { username, password } = request.payload;
+            return `Welcome ${username}!`;
+        }
+        // untuk test nya silahkan buka postman urlnya = menggunakan method POST pilih body->raw->JSON
+        //masukan { "username": "harrypotter", "password": "encryptedpassword" }
+        //output Welcome harrypotter!
+    },
 ];
  
 
